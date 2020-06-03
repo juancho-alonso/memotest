@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Memotest</title>
+</head>
+
+<body>
+    <section id="home">
+        <div class="main-box-home d-flex flex-column align-items-center">
+            <h1>Memotest</h1>
+            <p class="text-center">Hey! Let's play some Memotest! <br> Please insert your name first</p>
+            <input class="player-name" id="name-input" type="text" placeholder="Your name"></input>
+            <p>Please select difficulty</p>
+            <button class="btn btn-success" id="easy-button" data-id="easy" onclick="setDifficulty(this)">EASY</button>
+            <button class="btn btn-warning" id="medium-button" data-id="medium" onclick="setDifficulty(this)">MEDIUM</button>
+            <button class="btn btn-danger" id="expert-button" data-id="expert" onclick="setDifficulty(this)">EXPERT</button>
+            <p id="error-message">Oops! Don't forget your name!</p>
+        </div>
+    </section>
+    <section id="game">
+        <div class="main-box-game d-flex flex-column align-items-center">
+            <h1>Memotest</h1>
+            <p>Hello <span id="name"></span>!</p>
+            <p>Find all matches in less than <span id="tries"></span> tries</p>
+            <p>Difficulty <span id="difficulty"></span></p>
+            <div class="cards-box container">
+                <div class="row">
+                    <div class="card col mr-2 mb-2 p-0" data-id="1"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" data-id="2"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" data-id="3"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mb-2 p-0" data-id="4"><img src="./images/default.jpg" alt="card facing down"></div>
+                </div>
+                <div class="row">
+                    <div class="card col mr-2 mb-2 p-0" data-id="5"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" data-id="6"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" data-id="7"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mb-2 p-0" data-id="8"><img src="./images/default.jpg" alt="card facing down"></div>
+                </div>
+                <div class="row">
+                    <div class="card col mr-2 mb-2 p-0" data-id="9"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" data-id="10"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" data-id="11"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mb-2 p-0" data-id="12"><img src="./images/default.jpg" alt="card facing down"></div>
+                </div>
+            </div>
+            <div class="tries">
+                <p>Tries:<span id="tries-counter"></span></p>
+            </div>
+        </div>
+    </section>
+    <script src="./index.js"></script>
+</body>
+
+</html>
