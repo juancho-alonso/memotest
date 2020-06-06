@@ -31,28 +31,36 @@
             <p>Difficulty <span id="difficulty"></span></p>
             <div class="cards-box container">
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0" data-id="1"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mr-2 mb-2 p-0" data-id="2"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mr-2 mb-2 p-0" data-id="3"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mb-2 p-0" data-id="4"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="1" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="2" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="3" onclick="linkSides(this)"></div>
+                    <div class="card col mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="4" onclick="linkSides(this)"></div>
                 </div>
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0" data-id="5"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mr-2 mb-2 p-0" data-id="6"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mr-2 mb-2 p-0" data-id="7"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mb-2 p-0" data-id="8"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="5" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="6" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="7" onclick="linkSides(this)"></div>
+                    <div class="card col mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="8" onclick="linkSides(this)"></div>
                 </div>
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0" data-id="9"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mr-2 mb-2 p-0" data-id="10"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mr-2 mb-2 p-0" data-id="11"><img src="./images/default.jpg" alt="card facing down"></div>
-                    <div class="card col mb-2 p-0" data-id="12"><img src="./images/default.jpg" alt="card facing down"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="9" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="10" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="11" onclick="linkSides(this)"></div>
+                    <div class="card col mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="12" onclick="linkSides(this)"></div>
                 </div>
             </div>
             <div class="tries">
-                <p>Tries:<span id="tries-counter"></span></p>
+                <p>Tries:<span id="tries-counter">0</span></p>
             </div>
         </div>
+    </section>
+    <section id="result">
+        <div class="container">
+            <div class="result-box d-flex flex-column align-items-center">
+                <span id="result-text"></span>
+                <button class="btn btn-primary" onclick="restart()">Play again!</button>
+            </div>
+        </div>   
     </section>
     <script src="./index.js"></script>
 </body>
