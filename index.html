@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Crimson+Text:wght@400;600&display=swap"
+        rel="stylesheet">
     <title>Memotest</title>
 </head>
 
 <body>
+    <div class="background">
+        <img src="./images/background.jpg">
+    </div>
     <section id="home">
         <div class="main-box-home d-flex flex-column align-items-center">
             <h1>Memotest</h1>
@@ -18,8 +23,10 @@
             <input class="player-name" id="name-input" type="text" placeholder="Your name"></input>
             <p>Please select difficulty</p>
             <button class="btn btn-success" id="easy-button" data-id="easy" onclick="setDifficulty(this)">EASY</button>
-            <button class="btn btn-warning" id="medium-button" data-id="medium" onclick="setDifficulty(this)">MEDIUM</button>
-            <button class="btn btn-danger" id="expert-button" data-id="expert" onclick="setDifficulty(this)">EXPERT</button>
+            <button class="btn btn-warning" id="medium-button" data-id="medium"
+                onclick="setDifficulty(this)">MEDIUM</button>
+            <button class="btn btn-danger" id="expert-button" data-id="expert"
+                onclick="setDifficulty(this)">EXPERT</button>
             <p id="error-message">Oops! Don't forget your name!</p>
         </div>
     </section>
@@ -27,40 +34,52 @@
         <div class="main-box-game d-flex flex-column align-items-center">
             <h1>Memotest</h1>
             <p>Hello <span id="name"></span>!</p>
-            <p>Find all matches in less than <span id="tries"></span> tries</p>
+            <p>Find all pairs in less than <span id="tries"></span> tries</p>
             <p>Difficulty <span id="difficulty"></span></p>
             <div class="cards-box container">
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="1" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="2" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="3" onclick="linkSides(this)"></div>
-                    <div class="card col mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="4" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="1" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="2" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="3" onclick="linkSides(this)"></div>
+                    <div class="card col mb-2 p-0"><img src="./images/default.jpg" alt="card facing down" data-id="4"
+                            onclick="linkSides(this)"></div>
                 </div>
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="5" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="6" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="7" onclick="linkSides(this)"></div>
-                    <div class="card col mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="8" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="5" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="6" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="7" onclick="linkSides(this)"></div>
+                    <div class="card col mb-2 p-0"><img src="./images/default.jpg" alt="card facing down" data-id="8"
+                            onclick="linkSides(this)"></div>
                 </div>
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="9" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="10" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="11" onclick="linkSides(this)"></div>
-                    <div class="card col mb-2 p-0" ><img src="./images/default.jpg" alt="card facing down" data-id="12" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="9" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="10" onclick="linkSides(this)"></div>
+                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                            data-id="11" onclick="linkSides(this)"></div>
+                    <div class="card col mb-2 p-0"><img src="./images/default.jpg" alt="card facing down" data-id="12"
+                            onclick="linkSides(this)"></div>
                 </div>
             </div>
             <div class="tries">
-                <p>Tries:<span id="tries-counter">0</span></p>
+                <p>Tries: <span id="tries-counter">0</span></p>
             </div>
         </div>
     </section>
     <section id="result">
-        <div class="container">
-            <div class="result-box d-flex flex-column align-items-center">
+        <div class="result-container">
+            <div class="result-box">
                 <span id="result-text"></span>
-                <button class="btn btn-primary" onclick="restart()">Play again!</button>
+                <button class="btn play-again" onclick="restart()">Play again!</button>
             </div>
-        </div>   
+        </div>
     </section>
     <script src="./index.js"></script>
 </body>

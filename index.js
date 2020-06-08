@@ -163,18 +163,24 @@ function linkSides(e) {
 //--------------------Flip Card-----------------------------
 
 function flipCard(e){
-    chosenCards.push(e);
-    
-    if (chosenCards.length == 2){
-        findMatch()
-        
-    } else if (chosenCards.length > 2) {
-        chosenCards.length = 2;
-    }
     clicks++;
     addTriesCounter()
+    chosenCards.push(e)
+    if (chosenCards[0].getAttribute("data-id")!= chosenCards[1].getAttribute("data-id")){
+        if (chosenCards.length == 2){
+            findMatch()
+            
+        } else if (chosenCards.length > 2) {
+            chosenCards.length = 2;
+        }
+    } else if (chosenCards[0].getAttribute("data-id") === chosenCards[1].getAttribute("data-id")){
+        chosenCards[1].setAttribute("src", "images/default.jpg");
+        chosenCards = [];
+        chosenCardsName = [];
+    }
+    console.log(chosenCards)
     checkResult()
-   
+    
 }
 
 //-----------------Set Back to Default----------------------
@@ -199,11 +205,14 @@ function addTriesCounter(){
 
 function findMatch() {
     if (chosenCardsName[0] === chosenCardsName[1]){
+        console.log(chosenCardsName)
         matchesCounter++
+        console.log(matchesCounter)
         chosenCards[0].classList.add("grayscale");
         chosenCards[1].classList.add("grayscale");
+        chosenCards[0].removeAttribute("onclick");
+        chosenCards[1].removeAttribute("onclick");
         chosenCards = [];
-        
      
     } else if (chosenCardsName[0] != chosenCardsName[1]) {
         setTimeout(setDefault, 500);
