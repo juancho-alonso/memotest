@@ -12,6 +12,7 @@ var chosenCards = [];
 var chosenCardsName = [];
 const gameBoard = document.getElementById("game");
 const home = document.getElementById("home");
+const background = document.getElementById("background");
 var cardArray = [
     { 
         name: "pumba",
@@ -75,6 +76,15 @@ var cardArray = [
     }
 ]
 
+//---------------------------------------------------------
+
+window.onload = loadHome(); 
+
+function loadHome() {
+    
+   background.style.opacity = "1";
+  };
+
 
 //------------------------Get User Name--------------------
 function getName() {
@@ -108,7 +118,8 @@ function triesNumber(difficulty) {
 
 function checkInput(){
     if (nameInput.value === ""){
-        errorMessage.style.display = "block";
+        errorMessage.style.display = "block"; 
+        errorMessage.classList.add("animate__wobble");
     } else if (nameInput.value != "") {
         home.style.display = "none";
         gameBoard.style.display = "block";

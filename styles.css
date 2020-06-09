@@ -5,6 +5,7 @@
 body {
     margin: 10px !important;
     font-family: 'Crimson Text', serif !important;
+    background: #F2C063 !important;
 }
 
 .background {
@@ -14,6 +15,8 @@ body {
     z-index: -1;
     height: 100vh;
     width: auto;
+    opacity: 0;
+    transition: opacity .7s;
 }
 
 .background img {
@@ -22,7 +25,8 @@ body {
 }
 
 #home {
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 #game {
@@ -36,9 +40,20 @@ body {
     width: 100%; 
 }
 
+
 h1 {
     font-family: 'Cinzel', serif;
-    color: firebrick;
+    color: black;
+    font-size: 40px !important;
+}
+
+.home-back {
+    background-color: #FEF9EF;
+    width: auto;
+    padding: 20px;
+    border-radius: 4px;
+    border: solid 5px #482608;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 img {
@@ -52,11 +67,19 @@ img {
 
 .btn {
     margin-bottom: 10px;
+    width: 60%;
+}
+
+.text-home {
+    width: 60%;
 }
 
 .player-name {
     margin-bottom: 10px;
+    width: 60%;
+    padding-left: 10px;
 }
+
 
 #error-message{
     display: none;
@@ -91,8 +114,28 @@ img {
     color: white !important;
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 576px) {
+    h1 {
+        font-size: 60px !important;
+    }
+
+    .text-home {
+        margin-top: -15px;
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 75px !important;
+        padding: 0 10px;
+    }
+
+    .text-home {
+        width: 100%;
+    }
+
     .container {
-        max-width: 720px !important;
+        max-width: 600px !important;
      }
-  }
+}
+
