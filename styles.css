@@ -65,6 +65,31 @@ img {
     filter: grayscale(1);
 }
 
+.opacity {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.card {
+    border: none !important;
+    background: #FFBE3C !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: opacity .5s;
+}
+
+.cards-box {
+    width: 95%;
+}
+
+.flipback {
+    transform: rotateX(-360deg);
+    transition: all 0.5s ease-in-out;
+ }
+
+.images {
+    --animate-duration: 0.5s;
+}
+
 .btn {
     margin-bottom: 10px;
     width: 60%;
@@ -78,11 +103,30 @@ img {
     margin-bottom: 10px;
     width: 60%;
     padding-left: 10px;
+    outline-color: #F2A03D;
 }
 
 
-#error-message{
+#error-message {
     display: none;
+    font-weight: bold;
+    color: #dc3545;
+    background-color: antiquewhite;
+    border: solid antiquewhite;
+    border-width: 3px 12px;
+    border-radius: .25rem;
+}
+
+.tries {
+    background-color: antiquewhite;
+    width: 95%;
+    padding: 0px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.variable-text {
+    color: #A63A12;
 }
 
 .result-container {
@@ -98,7 +142,7 @@ img {
     width: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     background-color: orangered;
     height: 170px;
     padding: 35px;
@@ -122,6 +166,10 @@ img {
     .text-home {
         margin-top: -15px;
     }
+
+    .tries {
+        width: 540px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -137,5 +185,22 @@ img {
     .container {
         max-width: 600px !important;
      }
+
+    .tries {
+        width: 600px;
+    }
+
+    .main-box-game p {
+        font-size: 18px;
+    }
+
+    .game-difficulty {
+        margin-bottom: 22px;
+    }
+
+    .card:hover {
+        transition: .5s ease;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
 }
 

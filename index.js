@@ -10,6 +10,7 @@ var playerName = document.getElementById("name-input");
 var defaultCards = document.getElementsByClassName("card");
 var chosenCards = [];
 var chosenCardsName = [];
+var allCards = document.getElementsByClassName("images");
 const gameBoard = document.getElementById("game");
 const home = document.getElementById("home");
 const background = document.getElementById("background");
@@ -104,11 +105,11 @@ function setDifficulty(e){
 
 //-----------------------Set Tries--------------------------
 function triesNumber(difficulty) {
-    if(difficulty == "easy"){
+    if(difficulty == "Baby Lion"){
         tries = 15;
-    } else if (difficulty == "medium") {
+    } else if (difficulty == "Wild Beast") {
         tries = 12;
-    } else if (difficulty == "expert") {
+    } else if (difficulty == "Savannah King") {
         tries = 9;
     }
 }
@@ -119,7 +120,7 @@ function triesNumber(difficulty) {
 function checkInput(){
     if (nameInput.value === ""){
         errorMessage.style.display = "block"; 
-        errorMessage.classList.add("animate__wobble");
+        errorMessage.classList.add("animate__shakeY")
     } else if (nameInput.value != "") {
         home.style.display = "none";
         gameBoard.style.display = "block";
@@ -171,18 +172,38 @@ function linkSides(e) {
 }
 //----------------------------------------------------------
 
+
+
 //--------------------Flip Card-----------------------------
 
 function flipCard(e){
+    e.classList.add("animate__flipInX")
+    setTimeout(function(){e.classList.remove("animate__flipInX") }, 300);
     clicks++;
+    console.log(clicks)
     addTriesCounter()
-    chosenCards.push(e)
+    if (clicks <= 2) {
+        chosenCards.push(e)
+    } /*else if (clicks > 2) {
+        e.stopPropagation()
+    }*/
     if (chosenCards[0].getAttribute("data-id")!= chosenCards[1].getAttribute("data-id")){
         if (chosenCards.length == 2){
             findMatch()
             
+            /*for (i = 0; allCards.length; i++) {
+                allCards[i].removeAttribute("onclick")
+            }
+            setTimeout(preventError(e), 500);
+            function preventError(e) {
+                for (i = 0; allCards.length; i++) {
+                    allCards[i].setAttribute("onclick", "linkSides()")
+                }
+            }*/
+
         } else if (chosenCards.length > 2) {
-            chosenCards.length = 2;
+            
+            chosenCards = 2;
         }
     } else if (chosenCards[0].getAttribute("data-id") === chosenCards[1].getAttribute("data-id")){
         chosenCards[1].setAttribute("src", "images/default.jpg");
@@ -197,9 +218,17 @@ function flipCard(e){
 //-----------------Set Back to Default----------------------
 
 function setDefault(){
-    chosenCards[0].setAttribute("src", "images/default.jpg");
-    chosenCards[1].setAttribute("src", "images/default.jpg");
-    chosenCards = [];
+    chosenCards[0].classList.add("flipback")
+    chosenCards[1].classList.add("flipback")
+    console.log(chosenCards[0].classList)
+    setTimeout(function(){chosenCards[0].setAttribute("src", "images/default.jpg");}, 500);
+    setTimeout(function(){chosenCards[1].setAttribute("src", "images/default.jpg");}, 500);
+    setTimeout(function(){chosenCards[0].classList.remove("flipback")}, 500);
+    setTimeout(function(){chosenCards[1].classList.remove("flipback")}, 500);
+    chosenCards[0].classList.add("opacity")
+    chosenCards[1].classList.add("opacity")
+    setTimeout(function(){chosenCards = []}, 501);
+    
     clicks = 0
 }
 
@@ -216,14 +245,13 @@ function addTriesCounter(){
 
 function findMatch() {
     if (chosenCardsName[0] === chosenCardsName[1]){
-        console.log(chosenCardsName)
         matchesCounter++
-        console.log(matchesCounter)
         chosenCards[0].classList.add("grayscale");
         chosenCards[1].classList.add("grayscale");
         chosenCards[0].removeAttribute("onclick");
         chosenCards[1].removeAttribute("onclick");
         chosenCards = [];
+        
      
     } else if (chosenCardsName[0] != chosenCardsName[1]) {
         setTimeout(setDefault, 500);
@@ -231,6 +259,7 @@ function findMatch() {
     if (chosenCardsName.length > 1){
         chosenCardsName = [];
     }
+    clicks = 0
 }
 
 //------------------Check results---------------------------
@@ -240,7 +269,7 @@ function checkResult(){
         document.getElementById("result").style.display = "block";
         document.getElementById("result-text").innerHTML = "What a champion! You won!";
 
-    } else if (triesCounter >= tries && matchesCounter != 6){
+    } else if (triesCounter >= tries && matchesCounter <= 6){
         document.getElementById("result").style.display = "block";
         document.getElementById("result-text").innerHTML = "Better luck next time! Give it another go!";
 

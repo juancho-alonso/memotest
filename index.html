@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Crimson+Text:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-    <link rel="preload" href="./images/background.jpg" as="img">
+    <!-- <link rel="preload" href="./images/background.jpg" as="imag"> -->
     <title>Memotest</title>
 </head>
 
@@ -37,44 +37,44 @@
     </section>
     <section id="game">
         <div class="main-box-game d-flex flex-column align-items-center">
-            <h1>Memotest</h1>
-            <p>Hello <span id="name"></span>!</p>
-            <p>Find all pairs in less than <span id="tries"></span> tries</p>
-            <p>Difficulty: <span id="difficulty"></span></p>
+            <h1 class="m-0">Memotest</h1>
+            <p class="m-0">Hello <span class="font-weight-bold variable-text" id="name"></span>!</p>
+            <p class="m-0">Find all pairs in less than <span class="font-weight-bold variable-text" id="tries"></span> tries</p>
+            <p class="game-difficulty">Difficulty: <span class="font-weight-bold variable-text" id="difficulty"></span></p>
             <div class="cards-box container">
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="1" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="2" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="3" onclick="linkSides(this)"></div>
-                    <div class="card col mb-2 p-0"><img src="./images/default.jpg" alt="card facing down" data-id="4"
+                    <div class="card col mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down" data-id="4"
                             onclick="linkSides(this)"></div>
                 </div>
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="5" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="6" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="7" onclick="linkSides(this)"></div>
-                    <div class="card col mb-2 p-0"><img src="./images/default.jpg" alt="card facing down" data-id="8"
+                    <div class="card col mb-3 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down" data-id="8"
                             onclick="linkSides(this)"></div>
                 </div>
                 <div class="row">
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-2 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="9" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-2 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="10" onclick="linkSides(this)"></div>
-                    <div class="card col mr-2 mb-2 p-0"><img src="./images/default.jpg" alt="card facing down"
+                    <div class="card col mr-3 mb-2 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down"
                             data-id="11" onclick="linkSides(this)"></div>
-                    <div class="card col mb-2 p-0"><img src="./images/default.jpg" alt="card facing down" data-id="12"
+                    <div class="card col mb-2 p-0"><img class="images animate__animated" src="./images/default.jpg" alt="card facing down" data-id="12"
                             onclick="linkSides(this)"></div>
                 </div>
             </div>
-            <div class="tries">
-                <p>Tries: <span id="tries-counter">0</span></p>
+            <div class="tries d-flex flex-column align-items-center">
+                <p class="m-0">Tries: <span class="font-weight-bold variable-text" id="tries-counter">0</span></p>
             </div>
         </div>
     </section>
