@@ -195,22 +195,10 @@ function flipCard(e){
     addTriesCounter()
     if (clicks <= 2) {
         chosenCards.push(e)
-    } /*else if (clicks > 2) {
-        e.stopPropagation()
-    }*/
+    } 
     if (chosenCards[0].getAttribute("data-id")!= chosenCards[1].getAttribute("data-id")){
         if (chosenCards.length == 2){
             findMatch()
-            
-            /*for (i = 0; allCards.length; i++) {
-                allCards[i].removeAttribute("onclick")
-            }
-            setTimeout(preventError(e), 500);
-            function preventError(e) {
-                for (i = 0; allCards.length; i++) {
-                    allCards[i].setAttribute("onclick", "linkSides()")
-                }
-            }*/
 
         } else if (chosenCards.length > 2) {
             chosenCards = 2;
