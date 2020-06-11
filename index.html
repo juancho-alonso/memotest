@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="./images/thumbnail.jpg">
+    <link rel="icon" href="./images/favicon.jpg">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Crimson+Text:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-    <!-- <link rel="preload" href="./images/background.jpg" as="imag"> -->
     <title>Memotest</title>
 </head>
 
@@ -25,11 +26,11 @@
                 <p class="text-center text-home">Hey! Let's play some Memotest! Please insert your name first</p>
                 <input class="player-name" id="name-input" type="text" placeholder="Your name"></input>
                 <p>Please select difficulty</p>
-                <button class="btn btn-secondary" id="easy-button" data-id="Baby Lion"
+                <button class="btn btn-secondary animate__animated animate__faster" id="easy-button" data-id="Baby Lion"
                     onclick="setDifficulty(this)">BABY LION</button>
-                <button class="btn btn-warning" id="medium-button" data-id="Wild Beast"
+                <button class="btn btn-warning animate__animated animate__faster" id="medium-button" data-id="Wild Beast"
                     onclick="setDifficulty(this)">WILD BEAST</button>
-                <button class="btn btn-danger" id="expert-button" data-id="Savannah King"
+                <button class="btn btn-danger animate__animated animate__faster" id="expert-button" data-id="Savannah King"
                     onclick="setDifficulty(this)">SAVANNAH KING</button>
                 <p class="animate__animated" id="error-message">Oops! Don't forget your name!</p>
             </div>
@@ -80,9 +81,9 @@
     </section>
     <section id="result">
         <div class="result-container">
-            <div class="result-box">
+            <div class="result-box animate__animated animate__bounceInDown">
                 <span id="result-text"></span>
-                <button class="btn play-again" onclick="restart()">Play again!</button>
+                <button class="btn btn-primary play-again animate__animated animate__faster" onclick="restart()">Play again!</button>
             </div>
         </div>
     </section>

@@ -96,10 +96,14 @@ function getName() {
 //-----------------------Set Difficulty--------------------
 function setDifficulty(e){
    var difficultyData = e.getAttribute("data-id");
+   e.classList.add("animate__pulse")
+   setTimeout(function(){e.classList.remove("animate__pulse");}, 700);
+   checkInput();
+   setTimeout(startGame, 800);
    getName();
    triesNumber(difficultyData);
-   checkInput();
    addSettings(difficultyData);
+
 }
 //----------------------------------------------------------
 
@@ -121,12 +125,10 @@ function checkInput(){
     if (nameInput.value === ""){
         errorMessage.style.display = "block"; 
         errorMessage.classList.add("animate__shakeY")
-    } else if (nameInput.value != "") {
-        home.style.display = "none";
-        gameBoard.style.display = "block";
     }
 }
 //----------------------------------------------------------
+
 
 //------------------Add Initial Settings--------------------
 
@@ -137,6 +139,15 @@ function addSettings(difficultyData){
 }
 
 //----------------------------------------------------------
+
+//----------------------Start Game--------------------------
+
+function startGame() {
+    if (nameInput.value != "") {
+        home.style.display = "none";
+        gameBoard.style.display = "block";
+    }
+}
 
 //----------------------Shuffle Cards-----------------------
 
@@ -202,7 +213,6 @@ function flipCard(e){
             }*/
 
         } else if (chosenCards.length > 2) {
-            
             chosenCards = 2;
         }
     } else if (chosenCards[0].getAttribute("data-id") === chosenCards[1].getAttribute("data-id")){
@@ -246,8 +256,10 @@ function addTriesCounter(){
 function findMatch() {
     if (chosenCardsName[0] === chosenCardsName[1]){
         matchesCounter++
-        chosenCards[0].classList.add("grayscale");
         chosenCards[1].classList.add("grayscale");
+        chosenCards[0].classList.add("grayscale");
+        chosenCards[1].classList.add("animate__bounceIn");
+        chosenCards[0].classList.add("animate__bounceIn");
         chosenCards[0].removeAttribute("onclick");
         chosenCards[1].removeAttribute("onclick");
         chosenCards = [];
@@ -266,12 +278,12 @@ function findMatch() {
 
 function checkResult(){
     if (matchesCounter == 6 && triesCounter <= tries){
-        document.getElementById("result").style.display = "block";
+        document.getElementById("result").style.display = "flex";
         document.getElementById("result-text").innerHTML = "What a champion! You won!";
 
     } else if (triesCounter >= tries && matchesCounter <= 6){
-        document.getElementById("result").style.display = "block";
-        document.getElementById("result-text").innerHTML = "Better luck next time! Give it another go!";
+        document.getElementById("result").style.display = "flex";
+        document.getElementById("result-text").innerHTML = "Hakuna Matata " + playerName.value + "! Give it another go!";
 
     }
 }

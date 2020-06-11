@@ -3,10 +3,11 @@
 }
 
 body {
-    margin: 10px !important;
+    margin: 0px !important;
     font-family: 'Crimson Text', serif !important;
     background: #F2C063 !important;
 }
+
 
 .background {
     position: absolute;
@@ -27,17 +28,23 @@ body {
 #home {
     display: flex;
     justify-content: center;
+    margin: 30px 10px 10px 10px;
 }
 
 #game {
     display: none;
+    margin: 10px;
 }
 
 #result {
     display: none;
     position: absolute;
     top: 0;
-    width: 100%; 
+    width: 100%;
+    height: 100%; 
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.72);
 }
 
 
@@ -87,7 +94,7 @@ img {
  }
 
 .images {
-    --animate-duration: 0.5s;
+    --animate-duration: 0.5s; 
 }
 
 .btn {
@@ -115,6 +122,8 @@ img {
     border: solid antiquewhite;
     border-width: 3px 12px;
     border-radius: .25rem;
+    text-align: center;
+    width: 60%;
 }
 
 .tries {
@@ -139,24 +148,29 @@ img {
 
 .result-box {
     border-radius: 5px;
-    width: 75%;
+    width: 82%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: orangered;
+    justify-content: center;
+    background-color: #F2A03D;
     height: 170px;
-    padding: 35px;
+    padding: 20px;
+    border: solid 5px #F2C063;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 #result-text {
     margin-bottom: 20px;
-    color: white;
+    color: #A63A12;
+    width: 70%;
+    text-align: center;
 }
 
 .play-again {
-    background-color: darkcyan !important;
-    color: white !important;
+    margin: 0;
 }
+
 
 @media (min-width: 576px) {
     h1 {
@@ -169,6 +183,17 @@ img {
 
     .tries {
         width: 540px;
+    }
+
+    .result-box {
+        width: 45%;
+        min-width: 310px;
+        height: unset; 
+        padding: 60px 20px;
+    }
+
+    #result-text {
+        width: 64%;
     }
 }
 
@@ -202,5 +227,21 @@ img {
         transition: .5s ease;
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
+
+    .result-box {
+        width: 50%;
+        max-width: 400px;
+        padding: 80px 20px;
+        font-size: 18px;
+    }
+    
+    .play-again {
+        font-size: 18px !important;
+    }
+
+    #result-text {
+        margin-bottom: 30px;
+        width: unset;
+    }
 }
 
