@@ -4,13 +4,12 @@ var clicks = 0;
 var tries = 0;
 var triesCounter = 0;
 var matchesCounter = 0;
-var nameInput = document.getElementById("name-input");
-var errorMessage = document.getElementById("error-message");
-var playerName = document.getElementById("name-input");
 var defaultCards = document.getElementsByClassName("card");
 var chosenCards = [];
 var chosenCardsName = [];
 var allCards = document.getElementsByClassName("images");
+const playerName = document.getElementById("name-input");
+const errorMessage = document.getElementById("error-message");
 const gameBoard = document.getElementById("game");
 const home = document.getElementById("home");
 const background = document.getElementById("background");
@@ -122,7 +121,7 @@ function triesNumber(difficulty) {
 //-------------------------Check Input----------------------
 
 function checkInput(){
-    if (nameInput.value === ""){
+    if (playerName.value === ""){
         errorMessage.style.display = "block"; 
         errorMessage.classList.add("animate__shakeY")
     }
@@ -143,7 +142,7 @@ function addSettings(difficultyData){
 //----------------------Start Game--------------------------
 
 function startGame() {
-    if (nameInput.value != "") {
+    if (playerName.value != "") {
         home.style.display = "none";
         gameBoard.style.display = "block";
     }
@@ -198,11 +197,15 @@ function flipCard(e){
     } 
     if (chosenCards[0].getAttribute("data-id")!= chosenCards[1].getAttribute("data-id")){
         if (chosenCards.length == 2){
+            
             findMatch()
 
         } else if (chosenCards.length > 2) {
-            chosenCards = 2;
+            chosenCards.length = 2;
+            
         }
+        
+
     } else if (chosenCards[0].getAttribute("data-id") === chosenCards[1].getAttribute("data-id")){
         chosenCards[1].setAttribute("src", "images/default.jpg");
         chosenCards = [];
@@ -260,6 +263,7 @@ function findMatch() {
         chosenCardsName = [];
     }
     clicks = 0
+    
 }
 
 //------------------Check results---------------------------
@@ -267,11 +271,11 @@ function findMatch() {
 function checkResult(){
     if (matchesCounter == 6 && triesCounter <= tries){
         document.getElementById("result").style.display = "flex";
-        document.getElementById("result-text").innerHTML = "What a champion! You won!";
+        document.getElementById("result-text").innerHTML = "What a champion " + playerName.value + "! You just needed " + triesCounter + " tries to win!";
 
     } else if (triesCounter >= tries && matchesCounter <= 6){
         document.getElementById("result").style.display = "flex";
-        document.getElementById("result-text").innerHTML = "Hakuna Matata " + playerName.value + "! Give it another go!";
+        document.getElementById("result-text").innerHTML = "Hakuna Matata " + playerName.value + "! You've lost but give it another go!";
 
     }
 }
